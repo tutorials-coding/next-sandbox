@@ -1,8 +1,10 @@
+import { getByIdsRange } from '../../lib/utils'
+
 function Page({ data }) {
   return (
     <div>
-      <h1>{data.title}</h1>
-      <p>{data.body}</p>
+      <h1>{data?.title}</h1>
+      <p>{data?.body}</p>
     </div>
   )
 }
@@ -13,7 +15,7 @@ export async function getStaticPaths() {
   const data = await res.json()
 
   return {
-    paths: data.map((post) => ({
+    paths: getByIdsRange(data, 1, 5).map((post) => ({
       params: { id: String(post.id) },
     })),
     fallback: false,

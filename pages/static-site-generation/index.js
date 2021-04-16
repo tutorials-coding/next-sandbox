@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { getByIdsRange } from '../../lib/utils'
 
 function Page({ data }) {
   return (
@@ -22,7 +23,7 @@ export async function getStaticProps({ params }) {
   // Pass data to the page via props
   return {
     props: {
-      data,
+      data: getByIdsRange(data, 1, 5),
     },
   }
 }
