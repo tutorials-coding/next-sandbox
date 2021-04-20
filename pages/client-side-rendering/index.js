@@ -7,7 +7,7 @@ function Page() {
   useEffect(async () => {
     const res = await fetch('https://jsonplaceholder.typicode.com/posts')
     const data = await res.json()
-    setPosts(getByIdsRange(data, 1, 5))
+    setPosts(getByIdsRange(data, 1, 50))
   }, [])
 
   return (

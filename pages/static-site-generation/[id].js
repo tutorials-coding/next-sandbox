@@ -15,7 +15,7 @@ export async function getStaticPaths() {
   const data = await res.json()
 
   return {
-    paths: getByIdsRange(data, 1, 5).map((post) => ({
+    paths: getByIdsRange(data, 1, 50).map((post) => ({
       params: { id: String(post.id) },
     })),
     fallback: false,

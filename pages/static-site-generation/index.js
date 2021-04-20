@@ -23,7 +23,7 @@ export async function getStaticProps({ params }) {
   // Pass data to the page via props
   return {
     props: {
-      data: getByIdsRange(data, 1, 5),
+      data: getByIdsRange(data, 1, 50),
     },
   }
 }
